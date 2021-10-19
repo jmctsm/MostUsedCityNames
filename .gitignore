@@ -1,2 +1,5 @@
-.cityparser/
+.venv/
+__pycache__/
 .vscode/
+notes/
+keys.yml
