@@ -5,9 +5,7 @@ import json
 import requests
 
 
-def get_state_initials():
-    api_keys = cred_parser.parser()
-
+def get_state_initials(api_keys):
     api_url = (
         "https://parseapi.back4app.com/classes/Usabystate_States?count=1&limit=10000"
     )
@@ -38,10 +36,9 @@ def get_state_initials():
     else:
         print("oops.  Exiting")
         exit()
-        
-
 
 
 if __name__ == "__main__":
-    state_abbrevs = get_state_initials()
+    keys = cred_parser.parser()
+    state_abbrevs = get_state_initials(keys)
     print(state_abbrevs)
