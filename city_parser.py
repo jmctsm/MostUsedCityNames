@@ -34,7 +34,7 @@ def get_cities(api_keys, state_code):
 
 if __name__ == "__main__":
     keys = cred_parser.parser()
-    state_abbreviation = ["AL", "KY"]
+    state_abbreviation = ["AL", "KY", "TX"]
     state_cities = {}
     for state in state_abbreviation:
         cities, count = get_cities(keys, state)
@@ -45,3 +45,5 @@ if __name__ == "__main__":
         state_cities[state]["cities"] = cities
         state_cities[state]["count"] = count
     print(state_cities)
+    with open("test.txt", "w") as json_output:
+        json_output.write(json.dumps(state_cities))
