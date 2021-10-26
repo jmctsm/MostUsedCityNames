@@ -25,6 +25,10 @@ if __name__ == "__main__":
             sleep_counter = 0
             time.sleep(1)
 
-    city_count_dict = city_count.city_count(state_cities)
+    city_count_list = city_count.city_count(state_cities)
 
-    print(city_count_dict)
+    for x in range(0, 10):
+        for city in city_count_list[x].keys():
+            print(
+                f"{city=}     {city_count_list[x][city]['count']=}    {city_count_list[x][city]['state_set']=}"
+            )
